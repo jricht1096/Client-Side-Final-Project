@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+
+<html ng-app="myApp">
+    <head>
+        <title>Instagram Page</title>
+		
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+	
+		
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="app/controllers/main.js"></script>
+		<script type="text/javascript" src="app/controllers/image.js"></script>
+        <script type="text/javascript" src="app/services/imageService.js"></script>
+        <script type="text/javascript" src="app/services/mainService.js"></script>
+        <script type="text/javascript" src="app/directives/imageDirective.js"></script>
+	</head>
+    <body ng-controller="mainCtrl as main">
+		<header>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid" >
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#/">
+                    <span class="glyphicon glyphicon-camera">Instagram Page</span>
+                  </a>
+                  
+                    <a href="#/">My Posts</a>
+                    &nbsp; | &nbsp;
+                    <a href="#/page2">Create Post</a>
+                </div>
+                  <ul class="nav navbar-nav navbar-right">
+                     
+                      <li ng-if="main.loggedIn"><a href="#/"><button class="btn btn-danger" ng-click="main.doLogout()">Logout</button></a></li>
+                  </ul>
+                    {{result}}
+              </div>
+                
+            </nav>
+			
+			
+		</header>
+	<main class="container" >
+
+        
+        <div ng-view></div>
+
+        </main>        
+	</body>
+</html>	

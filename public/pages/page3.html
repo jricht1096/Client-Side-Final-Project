@@ -1,0 +1,28 @@
+        <div ng-controller="imageCtrl as ctrl">
+
+
+    <div class="row">
+    <div class="col-md-4"  ng-repeat="post in ctrl.posts">
+        <div class="panel panel-default" style="height:300px!important">
+            <div class=" row panel-heading">
+                <div class="col-md-9 panel-title">
+                
+                    <a class="posterprofile" href="#">
+                        <img alt="Profile pic" src="{{ctrl.getOwner(post.owner).profilePic}}" class="profilepic"></img>{{" "+ctrl.getOwner(post.owner).name}}
+            </a>
+                    </div>
+
+            </div>
+                <div class="panel-body">
+                <img src="{{post.image}}" class="picposted"/>
+                    <div class="row">
+                        <div class="col-sm-9">{{post.caption}}
+                        </div>
+                        <div class="col-sm-3"><i class="glyphicon glyphicon-heart"></i>{{post.numberOfLikes}}
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+        </div>
+        </div>

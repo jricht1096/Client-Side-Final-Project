@@ -1,0 +1,28 @@
+<div class="jumbotron text-center" ng-if="!main.loggedIn">
+    
+    
+      <div>
+        <p>Please Login</p>
+        <a href="#/login" class="btn btn-success"> Login </a>
+	</div>
+</div>
+
+<div ng-controller="imageCtrl as ctrl" ng-if="main.loggedIn">
+    <div class="row">
+        
+     <a href="#/"> <button type="submit">4Columns&nbsp;</button></a>
+        
+         <a href="#/2"> <button type="submit">2Columns&nbsp;</button></a>
+        
+                    <a href="#/list"> <button type="submit">List&nbsp;</button></a>
+        <p>&nbsp;</p>
+   
+   
+   <div class="row">
+    <div class="col-md-4"  ng-repeat="post in ctrl.posts">
+        <image-directive a-text="{{someText}}" my-post="post" get-owner="ctrl.getOwner(owner)"></image-directive>
+        
+
+    </div>
+        </div>
+        </div>

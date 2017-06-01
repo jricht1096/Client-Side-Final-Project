@@ -1,0 +1,53 @@
+<div class="jumbotron text-center" ng-if="!main.loggedIn">
+    
+    
+      <div>
+        <p>Please Login</p>
+        <a href="#/login" class="btn btn-success"> Login </a>
+	</div>
+</div>
+
+
+<div ng-controller="imageCtrl as ctrl" ng-if="main.loggedIn">
+     <div class="row">
+     
+          <a href="#/"> <button type="submit">4Columns&nbsp;</button></a>
+        
+         <a href="#/3"> <button type="submit">3Columns&nbsp;</button></a>
+        
+                    <a href="#/2"> <button type="submit">2Columns&nbsp;</button></a>
+        <p>&nbsp;</p>
+         
+     </div>
+   <div class="row">
+
+    
+    <div class="post" ng-repeat="post in ctrl.posts">
+        <div class="panel panel-default">
+            <div class=" row panel-heading">
+                <div class="col-md-11">
+                <h3 class="panel-title">
+                    <a class="posterprofile" href="#">
+                        <img alt="Profile pic" src="{{ctrl.getOwner(post.owner).profilePic}}" class="profilepic" style="max-width:4% !important;"></img>{{ctrl.getOwner(post.owner).name}}
+            </a>
+                </h3>
+                    </div>
+                                <div class="col-md-1">
+    <button class="btn btn-lg glyphicon glyphicon-trash" ng-click="trashClicked(post)"></button>
+
+            </div>
+            </div>
+                <div class="panel-body">
+                <img src="{{post.image}}" class="picposted"/>
+                    <div class="panel-footer"><p class="likes">4 likes</p>
+                        <p class="caption">{{post.caption}}<a class="posterprofile">{{ctrl.userInfo.userID}}</a> {{post.content}} <a class="tag">#getrektm8</a></p>
+                        
+                        <p class="comments">comments...</p>
+                        <p class="usercomments" ng-repeat="comment in post.comments"><a class="posterprofile">{{comment.commentor}}</a>{{ comment.comment}}<a class="tag">{{comment.hastags}}</a></p>
+                        <hr class="break"/>
+                        <i class="glyphicon glyphicon-heart" src="assets/likeiconuncheck.png"></i><p class="comment">Add a comment..<input type="text" name="comment" class="comment"></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+        </div>

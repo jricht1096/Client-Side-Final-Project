@@ -1,0 +1,20 @@
+        <div class="panel panel-default" style="height:300px!important">
+            <div class=" row panel-heading">
+                <div class="col-md-9 panel-title">
+                {{aText}}
+                    <a class="posterprofile" href="#">
+                        <img alt="Profile pic" src="{{getOwner({owner : myPost.owner}).profilePic}}" class="profilepic"></img>{{" "+getOwner({owner : myPost.owner}).name}}
+            </a>
+                    </div>
+
+            </div>
+                <div class="panel-body">
+                <img src="{{myPost.image}}" class="picposted"/>
+                    <div class="row">
+                        <div class="col-sm-9">{{myPost.caption}}
+                        </div>
+                        <div class="col-sm-3"><i class="glyphicon glyphicon-heart"></i>{{myPost.numberOfLikes}}
+                        </div>
+                    </div>
+                </div>
+        </div>
